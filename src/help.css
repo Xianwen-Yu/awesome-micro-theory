@@ -1,0 +1,19 @@
+.help-page { max-width: 920px; margin-inline: auto; }
+.help-intro { padding-block: clamp(38px,6vw,75px) 26px; }
+.help-intro h1 { margin: 0; font: 550 clamp(2.1rem,4.8vw,3.7rem)/1.12 var(--display); letter-spacing: -.04em; text-wrap: balance; }
+.help-page p, .help-page li { line-height: 1.7; max-width: 69ch; }
+.help-intro p { color: var(--sub); font-size: 1.08rem; margin-bottom: 0; }
+.help-page h2 { font: 570 clamp(1.35rem,2.7vw,1.9rem)/1.22 var(--display); margin: 0; text-wrap: balance; }
+.help-example { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: clamp(20px,4vw,36px); }
+.help-pair { color: var(--accent-dark); font: 500 clamp(1.1rem,2.4vw,1.45rem) var(--display); }
+.help-pair span { padding-inline: .12em; }
+.help-page ol { padding-inline-start: 1.5em; }
+.help-page li + li { margin-top: .65em; }
+.help-page a { text-underline-offset: .19em; }
+.help-cta { display: inline-flex; align-items: center; gap: .7em; min-height: 44px; margin-top: .4em; padding: .5em 1em; border-radius: 7px; color: white; background: var(--accent-dark); text-decoration: none; }
+.help-cta:hover { background: var(--navy); color: white; }
+.help-sections section { padding-block: 26px; border-bottom: 1px solid var(--line); }
+.help-sections p { margin: .65em 0 0; }
+.help-links { display: flex; flex-wrap: wrap; gap: 0 1.25em; }
+.help-links a { display: inline-flex; align-items: center; min-height: 40px; color: var(--accent-dark); }
+@media (max-width: 600px) { .help-pair cite { display: block; } }

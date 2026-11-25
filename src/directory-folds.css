@@ -1,0 +1,30 @@
+/* The field rows themselves are the directory on its landing page. */
+#directory .directory-layout{display:block;margin-block:24px 38px}
+#directory .group-side{display:none}
+#directory[data-filtered=true] .group-side{display:block;margin:0 0 18px}
+#directory .group-side h2,#directory #groups{display:none}
+#directory .mobile-group{display:flex;align-items:center;gap:12px;color:var(--sub);font-size:.92rem;font-weight:600}
+#directory .mobile-group select{flex:0 1 auto;max-width:100%;min-width:0;min-height:44px;border:1px solid var(--line);border-radius:8px;background-color:#fff;color:var(--ink);padding-inline-start:10px;font:inherit}
+#directory .directory-results{min-width:0}
+#branch-index .directory-fold{margin:0;border-top:1px solid var(--line)}
+#branch-index .directory-fold:last-child{border-bottom:1px solid var(--line)}
+.directory-fold h3{margin:0;padding:0}
+.fold-switch{display:grid;align-items:center;grid-template-columns:minmax(0,1fr) auto 18px;gap:14px;width:100%;min-height:56px;border:0;border-radius:4px;background:transparent;color:var(--ink);padding:10px 12px;text-align:start;cursor:pointer;font:inherit}
+.fold-switch:hover,.fold-switch:focus-visible{background:var(--subtle,#f3f1f8)}
+.fold-switch:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.fold-title{font:550 clamp(1.05rem,1.5vw,1.27rem)/1.25 var(--display);overflow-wrap:anywhere}
+.fold-count{color:var(--sub);font:500 .9rem/1.2 var(--sans);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fold-switch::after{content:"";width:8px;height:8px;justify-self:center;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);transition:transform .22s ease}
+.fold-switch[aria-expanded=true]::after{transform:rotate(225deg) translate(-1px,-1px)}
+.fold-body{display:grid;grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .24s ease,visibility 0s}
+.fold-body[inert]{grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .24s ease,visibility 0s .24s}
+.fold-clip{min-height:0;overflow:hidden}
+.fold-clip .tile-grid{padding:6px 6px 18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+@media(max-width:600px){
+ .fold-switch{gap:8px;min-height:54px;padding-inline:6px}
+ .fold-clip .tile-grid{grid-template-columns:minmax(0,1fr);padding-inline:3px}
+ .fold-count{font-size:.85rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .fold-switch::after,.fold-body,.fold-body[inert]{transition:none}
+}

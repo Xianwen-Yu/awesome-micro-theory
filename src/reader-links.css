@@ -1,0 +1,57 @@
+.paper-lineage{
+ --lineage-rule:#d9d8e2;
+ --lineage-muted:#595767;
+ --lineage-link:#504376;
+ width:100%;
+ min-width:0;
+ margin:.65rem 0 1rem;
+ color:var(--ink,#29273b);
+}
+.focus-paper .paper-lineage{
+ --lineage-rule:#575671;
+ --lineage-muted:#d4d0e3;
+ --lineage-link:#f0d1a0;
+ color:#f8f7fc;
+}
+.lineage-group{border-top:1px solid var(--lineage-rule)}
+.lineage-group:last-child{border-bottom:1px solid var(--lineage-rule)}
+.lineage-group>summary{
+ position:relative;display:grid;gap:.1rem;align-content:center;min-height:46px;
+ padding:.47rem 1.25rem .47rem 0;cursor:pointer;list-style:none;
+}
+.lineage-group>summary::-webkit-details-marker{display:none}
+.lineage-group>summary::after{
+ content:"";position:absolute;right:3px;top:50%;width:7px;height:7px;
+ border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:translateY(-65%) rotate(45deg);
+}
+.lineage-group[open]>summary::after{transform:translateY(-30%) rotate(225deg)}
+.lineage-direction{font:650 .89rem/1.4 var(--sans)}
+.lineage-direction b{font-size:.82rem;font-weight:500;color:var(--lineage-muted);font-variant-numeric:tabular-nums;margin-inline-start:.15rem}
+.lineage-preview,.sky-detail .lineage-preview{
+ font:400 .84rem/1.42 var(--sans);color:var(--lineage-muted);overflow-wrap:anywhere;
+}
+.lineage-group[open] .lineage-preview{display:none}
+.lineage-items{list-style:none;margin:0;padding:0 0 .45rem}
+.lineage-items li{margin:0;padding:.5rem 0 .7rem}
+.lineage-items li+li{border-top:1px dashed var(--lineage-rule)}
+.chronological .lineage-items{padding:0 0 .45rem;animation:none}
+.chronological .lineage-items>li{display:block;border-bottom:0;padding:.5rem 0 .7rem}
+.paper-lineage .lineage-byline,.sky-detail .paper-lineage .lineage-byline{margin:0 0 .16rem;font:500 .84rem/1.4 var(--sans);color:var(--lineage-muted)}
+.paper-lineage a.lineage-paper-title{font:550 1.09rem/1.36 var(--display);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;color:inherit;overflow-wrap:anywhere}
+.paper-lineage .lineage-text,.sky-detail .paper-lineage .lineage-text{margin:.38rem 0 .15rem;font:.94rem/1.57 var(--sans);color:inherit}
+.lineage-text strong{display:block;font-size:.89rem}
+.paper-lineage a.lineage-source,.sky-detail .lineage-source{font:.84rem/1.55 var(--sans);color:var(--lineage-link,#504376);text-underline-offset:.16em}
+.sky-detail article .sky-paper-brief{margin:.55rem 0;color:var(--ink);line-height:1.6;font-size:.97rem}
+.lineage-empty{font:.88rem/1.5 var(--sans);color:inherit}
+.sky-relation-links{display:flex;gap:.5rem 1rem;flex-wrap:wrap;align-items:baseline}
+@media(prefers-reduced-motion:no-preference){
+ .lineage-group>summary::after{transition:transform .18s ease}
+ .lineage-group[open]>.lineage-items{animation:reader-in .2s ease-out}
+}
+@supports (interpolate-size: allow-keywords) and (transition-behavior:allow-discrete){
+ @media(prefers-reduced-motion:no-preference){
+  .lineage-group{interpolate-size:allow-keywords}
+  .lineage-group::details-content{overflow:clip;block-size:0;transition:block-size .2s ease,content-visibility .2s allow-discrete}
+  .lineage-group[open]::details-content{block-size:auto}
+ }
+}

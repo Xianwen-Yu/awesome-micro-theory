@@ -1,0 +1,60 @@
+.atlas-paper-results {
+  margin: .8rem 0 1.5rem;
+  color: var(--text);
+}
+.atlas-paper-results[hidden] { display: none; }
+.paper-results-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .3rem .75rem;
+  margin-bottom: .3rem;
+}
+.paper-results-head h2 { margin: 0; font-size: 1.1rem; }
+#atlas-paper-count { color: var(--sub); font-size: .85rem; }
+#atlas-paper-list { margin: 0; padding: 0; list-style: none; }
+#atlas-paper-list li { border-bottom: 1px solid var(--line); }
+#atlas-paper-list a {
+  display: grid;
+  grid-template-columns: 4.8rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: .65rem;
+  min-height: 44px;
+  padding: .55rem .5rem;
+  border-radius: .25rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.paper-result-type { color: var(--green); font-size: .78rem; }
+.paper-result-copy { display: grid; gap: .13rem; overflow-wrap: anywhere; }
+.paper-result-copy strong { font-size: .95rem; font-weight: 600; }
+.paper-result-copy small { color: var(--sub); font-size: .8rem; }
+.paper-result-arrow { color: var(--green); }
+#atlas-paper-list a:focus-visible,
+#atlas-paper-footer button:focus-visible { outline: 2px solid var(--green); outline-offset: 1px; }
+@media (hover:hover) {
+  #atlas-paper-list a:hover { background: var(--subtle); }
+  #atlas-paper-footer button:hover { text-decoration: underline; }
+}
+#atlas-paper-footer { display: flex; gap: .75rem; }
+#atlas-paper-footer button {
+  min-height: 44px;
+  padding: .3rem .5rem;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-size: .85rem;
+}
+@media (max-width:600px) {
+  #atlas-paper-list a { grid-template-columns: minmax(0,1fr) auto; gap: .1rem .4rem; }
+  .paper-result-type { grid-column: 1; }
+  .paper-result-copy { grid-column: 1; }
+  .paper-result-arrow { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+}
+#atlas-paper-keys { display: none; color: var(--sub); font-size: .78rem; }
+@media (hover:hover) and (pointer:fine) {
+  .atlas-search:focus-within + .atlas-paper-results #atlas-paper-keys:not([hidden]),
+  .atlas-paper-results:focus-within #atlas-paper-keys:not([hidden]) { display: inline; }
+}
